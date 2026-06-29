@@ -17,7 +17,7 @@
 从仓库同步到全局 Codex skill 库：
 
 ```powershell
-$repo = "C:\Users\wangzhengyuan7\Documents\Codex\2026-05-29\files-mentioned-by-the-user-2\yinyo-writer-repo"
+$repo = (Resolve-Path ".").Path
 $codex = "C:\Users\wangzhengyuan7\.codex\skills"
 
 Copy-Item "$repo\skills\yinyo-writer" "$codex\yinyo-writer" -Recurse -Force
@@ -41,6 +41,12 @@ Get-ChildItem .\skills -Recurse -Filter SKILL.md | ForEach-Object { "$($_.FullNa
 rg "skill_view|image_generate|/root/.openclaw|placeholder-for-wechat-upload|sk-" .\skills
 ```
 
+检查写作主 skill 的关键版本和 L1 首屏规则：
+
+```powershell
+rg 'version: "4\.0\.3"|reader-facing audit language|第一屏|免责声明' .\skills\yinyo-writer
+```
+
 检查 HTML 脚本：
 
 ```powershell
@@ -60,8 +66,8 @@ python .\skills\yinyo-wechat-html\scripts\convert_to_wechat_html.py --input .\te
 
 ```powershell
 git status --short
-git add README.md AGENTS.md MAINTENANCE.md skills
-git commit -m "Refactor yinyo writer into modular skills"
+git add README.md AGENTS.md MAINTENANCE.md SECURITY.md skills tests
+git commit -m "Update yinyo writer skill rules"
 git push origin main
 ```
 
@@ -70,6 +76,7 @@ git push origin main
 ## 变更原则
 
 - 改写作规则，优先改 `yinyo-writer` 的 references 或 examples。
+- 改 L1 可信度规则时，必须保持“内部护栏、读者不可见”的表达原则。
 - 改 HTML 样式，优先改 `yinyo-wechat-html` 的 docs 或脚本。
 - 改图片风格，优先改 `yinyo-image2-prompt` 的 docs。
 - 改外发能力时，必须显式保留人工确认边界。

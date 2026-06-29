@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
 description: "Load when the user needs a Yinyo-style Chinese long-form article, WeChat post draft, or article-quality review."
-version: "4.0.0"
-last_updated: "2026-06-02"
+version: "4.0.3"
+last_updated: "2026-06-29"
 depends:
   - yinyo-wechat-html
   - yinyo-image2-prompt
@@ -48,10 +48,13 @@ Boundaries:
 1. **Truth first.** It is acceptable to say a product is flawed or the evidence is incomplete. It is not acceptable to sound certain without evidence.
 2. **First-person engine.** The article should feel like one person thinking aloud, not a report assembled from sources.
 3. **One real sentence.** Before drafting, identify the sentence the article is trying to make the reader accept.
-4. **Reader specificity.** Write for one concrete reader, not a demographic label.
-5. **Natural rhythm.** Avoid sentence-period-sentence-period stacks. Use commas, semicolons, questions, and paragraph breaks according to meaning.
-6. **Depth over coverage.** Each core module or claim needs explanation, example, contrast, or user-facing implication.
-7. **Images are cognition aids.** Use images only when they reduce reading burden or explain structure.
+4. **First-principles default.** By default, organize every article from first principles: reduce the topic to the underlying problem, why it exists, what must be true, and what consequence follows. Use this as the article's hidden spine; do not turn it into stiff step-by-step exposition unless the user asks for it.
+5. **Historical-popular narrative default.** For Chinese long-form articles, prefer an accessible historical narrative voice: explain complex ideas through characters, conflicts, turning points, consequences, and dry humor. Use observable traits of popular historical storytelling; do not imitate any living author's exact wording, signature cadence, or recognizable passages.
+6. **Human-scale philosophical ending default.** For AI-themed essays, close by moving from the phenomenon's large-scale nature, to a convention-breaking philosophical question, then back to a small but durable human trait. The ending should feel like a quiet recognition, not a slogan or mystical fog.
+7. **Reader specificity.** Write for one concrete reader, not a demographic label.
+8. **Natural rhythm.** Avoid sentence-period-sentence-period stacks. Use commas, semicolons, questions, and paragraph breaks according to meaning. Short sentences are a preference, not the goal; semantic rhythm wins over sentence-count rules.
+9. **Depth over coverage.** Each core module or claim needs explanation, example, contrast, or user-facing implication.
+10. **Images are cognition aids.** Use images only when they reduce reading burden or explain structure.
 
 ## Workflow
 
@@ -78,29 +81,34 @@ L1 hard checks:
 - tool/product names are specific
 - dates and release timelines are concrete when used
 - no fake source attribution
+- satisfy L1 through precise wording, evidence placement, and source formatting; do not expose L1 as reader-facing audit language
+- evidence boundaries stay near the claim, data, source list, or caveat paragraph; do not lead the article with audit-style disclaimers
 
 L2 style checks:
 
 - opening has a live hook, not a report summary
+- opening starts with conflict, scene, judgment, or curiosity; never start with scope narrowing, benchmark disclaimers, source bookkeeping, or "this is only a methodology judgment"
 - paragraph rhythm is natural
 - no forced one-sentence-per-line cadence
 - punctuation follows semantic units
+- short-sentence style must not override semantic punctuation: use colon/semicolon/comma/dash for grouped parallel, progressive, explanatory, or contrastive ideas
 
 L3 content checks:
 
 - every major claim has example, evidence, contrast, or consequence
 - technical concepts are explained in plain language
-- Hermes/YINYO/OpenClaw/GA style comparisons are concrete when used
+- product, model, framework, or methodology comparisons are concrete when used
 
 L4 human-feel check:
 
 - the article sounds like a real author with judgment
 - no generic "AI article" filler
 - conclusion returns to the strongest judgment
+- AI-themed conclusions move from macro phenomenon, to philosophical question, to human-scale trait without using slogan-like closure
 
 ## Runtime Resources
 
-Load only when needed:
+For every writing, rewrite, expansion, or review task, load all of these required files before drafting or judging the article:
 
 - `references/yinyo-style-dna.md` — voice and style DNA
 - `references/yinyo-opening-techniques.md` — opening patterns

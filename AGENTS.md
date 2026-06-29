@@ -30,6 +30,8 @@
 - 不把旧 Harness 专用术语写回通用 skill 契约。
 - 不在 `SKILL.md` 里堆长文档；长规则放到 `references/`、`docs/`、`examples/`、`scripts/`。
 - 不把 HTML、image prompt、Feishu 发布逻辑塞回 `yinyo-writer` 主 skill。
+- `yinyo-writer` 的 L1 硬检查是内部护栏：通过精准措辞、证据位置和来源格式满足，不写成读者可见的审稿语言或开头免责声明。
+- 文章开头必须先给冲突、场景、判断或好奇心；不要用范围收缩、benchmark 声明或来源 bookkeeping 抢第一屏。
 
 ---
 
@@ -46,3 +48,4 @@
 - `yinyo-wechat-html/docs/feishu-docx-api-notes.md` 是飞书发布参考，不是默认执行流程。
 - `yinyo-writer/examples/iteration-lessons.md` 是历史迭代经验，不是可直接照抄的当前文章模板。
 - `skills/yinyo-wechat-html/scripts/convert_to_wechat_html.py` 应保持参数化，不允许恢复硬编码输入输出路径。
+- `yinyo-writer/references/data-comparison-rules.md` 的数据可信度规则要求贴近数据自然交代，不允许变成文章开头免责声明。

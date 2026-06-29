@@ -8,13 +8,14 @@
 ![Skill](https://img.shields.io/badge/type-codex_skill-2563eb)
 ![Language](https://img.shields.io/badge/language-zh--CN-f59e0b)
 ![Runtime](https://img.shields.io/badge/runtime-modular-7c3aed)
+![Writer](https://img.shields.io/badge/yinyo--writer-v4.0.3-8b5cf6)
 ![License](https://img.shields.io/badge/license-internal-lightgrey)
 
 </div>
 
 `yinyo-writer` 是一组面向中文技术长文的 Codex Skills：主 skill 负责写作判断，HTML 和 image2 prompt 作为运行时子 skill 独立执行。
 
-[看效果](#看效果) · [安装](#安装) · [它包含什么](#它包含什么) · [工作方式](#工作方式) · [目录结构](#目录结构) · [边界](#边界) · [校验](#校验)
+[看效果](#看效果) · [安装](#安装) · [它包含什么](#它包含什么) · [工作方式](#工作方式) · [目录结构](#目录结构) · [边界](#边界) · [安全](#安全) · [校验](#校验)
 
 ---
 
@@ -59,7 +60,7 @@ Copy-Item .\skills\yinyo-image2-prompt C:\Users\wangzhengyuan7\.codex\skills\yin
 
 | Skill | 职责 | 不负责 |
 | --- | --- | --- |
-| `yinyo-writer` | 中文技术长文写作、结构判断、风格约束、质量复核 | HTML 生成、图片提示词、发布 |
+| `yinyo-writer` | 中文技术长文写作、结构判断、风格约束、质量复核，当前主版本 `v4.0.3` | HTML 生成、图片提示词、发布 |
 | `yinyo-wechat-html` | Markdown 转 WeChat HTML、内联样式、编码与结构校验 | 写文章、生成图片、自动发布 |
 | `yinyo-image2-prompt` | 封面和正文插图的 prompt plan、风格一致性、位置建议 | 写文章、转 HTML、上传图片 |
 
@@ -105,6 +106,15 @@ skills/
 - 不把 HTML、图片 prompt、发布流程重新塞回主写作 skill。
 - 不让旧 Harness 术语污染通用 Codex 运行时，比如 `skill_view()` 或 `image_generate()`。
 - 不把历史迭代记录写成当前规则，规则必须能执行、能检查。
+- 不把 L1 硬检查写成读者可见的审稿话术；事实边界要靠精准措辞、证据位置和来源格式自然满足。
+
+---
+
+## 安全
+
+本仓库不应保存未公开业务资料、真实用户数据、密钥、Cookie、私有图片素材或公众号/飞书发布凭证。
+
+发现敏感信息时，先停止传播，再按 [SECURITY.md](SECURITY.md) 的流程处理；修复后再继续发布或同步到全局 Codex skill 库。
 
 ---
 
