@@ -8,7 +8,7 @@
 ![Skill](https://img.shields.io/badge/type-codex_skill-2563eb)
 ![Language](https://img.shields.io/badge/language-zh--CN-f59e0b)
 ![Runtime](https://img.shields.io/badge/runtime-modular-7c3aed)
-![Writer](https://img.shields.io/badge/yinyo--writer-v4.0.3-8b5cf6)
+![Writer](https://img.shields.io/badge/yinyo--writer-v4.0.4-8b5cf6)
 ![License](https://img.shields.io/badge/license-internal-lightgrey)
 
 </div>
@@ -60,7 +60,7 @@ Copy-Item .\skills\yinyo-image2-prompt C:\Users\wangzhengyuan7\.codex\skills\yin
 
 | Skill | 职责 | 不负责 |
 | --- | --- | --- |
-| `yinyo-writer` | 中文技术长文写作、结构判断、风格约束、质量复核，当前主版本 `v4.0.3` | HTML 生成、图片提示词、发布 |
+| `yinyo-writer` | 中文技术长文写作、结构判断、风格约束、质量复核，当前主版本 `v4.0.4` | HTML 生成、图片提示词、发布 |
 | `yinyo-wechat-html` | Markdown 转 WeChat HTML、内联样式、编码与结构校验 | 写文章、生成图片、自动发布 |
 | `yinyo-image2-prompt` | 封面和正文插图的 prompt plan、风格一致性、位置建议 | 写文章、转 HTML、上传图片 |
 

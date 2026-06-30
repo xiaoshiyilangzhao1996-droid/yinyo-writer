@@ -1,7 +1,7 @@
 # 禁用词表与推荐词表
 
 > 从 SKILL.md 外移，供 L1 质检和写作时查阅。
-> Aligned with yinyo-writer v4.0.3+
+> Aligned with yinyo-writer v4.0.4+
 
 ## 高频踩雷词（绝对禁用）
 

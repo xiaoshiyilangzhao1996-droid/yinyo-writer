@@ -44,7 +44,7 @@ rg "skill_view|image_generate|/root/.openclaw|placeholder-for-wechat-upload|sk-"
 检查写作主 skill 的关键版本和 L1 首屏规则：
 
 ```powershell
-rg 'version: "4\.0\.3"|reader-facing audit language|第一屏|免责声明' .\skills\yinyo-writer
+rg 'version: "4\.0\.4"|reader-facing audit language|第一屏|免责声明' .\skills\yinyo-writer
 ```
 
 检查 HTML 脚本：

@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
 description: "Load when the user needs a Yinyo-style Chinese long-form article, WeChat post draft, or article-quality review."
-version: "4.0.3"
-last_updated: "2026-06-29"
+version: "4.0.4"
+last_updated: "2026-06-30"
 depends:
   - yinyo-wechat-html
   - yinyo-image2-prompt
@@ -98,6 +98,14 @@ L3 content checks:
 - every major claim has example, evidence, contrast, or consequence
 - technical concepts are explained in plain language
 - product, model, framework, or methodology comparisons are concrete when used
+
+L3.5 reader-logic checks:
+
+- before drafting or reviewing, identify the reader journey: care point, current belief, tension, new understanding, and intended aftertaste/action
+- each major section must answer the natural question created by the previous section
+- introduce concepts, evidence, examples, and conclusions only after the reader has a reason to need them
+- each example must clarify, prove, complicate, or emotionally ground the current claim
+- when recommending a combination, framework, tool, or method, explain why the parts belong together
 
 L4 human-feel check:
 
